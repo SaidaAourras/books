@@ -1,0 +1,69 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "poster": "https://th.bing.com/th?id=OIP.fjy0J4oxduE_KEQYBQI6jgHaLY&w=201&h=309&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
+        "likes":0
+      },
+      {
+        "id": 2,
+        "title": "1984",
+        "author": "George Orwell",
+        "poster": "https://th.bing.com/th?id=OIP.0lhZw7B4IUdvekIJNPpMDwHaLF&w=204&h=305&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
+        "likes":0
+      },
+      {
+        "id": 3,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "poster": "https://th.bing.com/th/id/OIP.JKa53odQdRooMPz-0_gnKgHaL2?pid=ImgDet&w=179&h=285&c=7&dpr=1.5",
+        "likes":0
+      },
+      {
+        "id": 4,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "poster": "https://th.bing.com/th/id/OIP._JmkQKUSLw-tG8ZlKB9CbQHaKe?pid=ImgDet&w=179&h=253&c=7&dpr=1.5",
+        "likes":0
+      },
+      {
+        "id": 5,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "poster": "https://th.bing.com/th/id/OIP.MgUPuykev0NEemI-U-4EoAHaLF?pid=ImgDet&w=179&h=268&c=7&dpr=1.5",
+        "likes":0
+      },
+      {
+        "id": 6,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "poster": "https://th.bing.com/th/id/OIP.oUskPr8J1saPsY-NRoPtjQAAAA?pid=ImgDet&w=179&h=269&c=7&dpr=1.5",
+        "likes":0
+      },
+      {
+        "id": 7,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "poster": "https://th.bing.com/th/id/OIP.Z8hO15EYFhYMrcLQFyLIhwAAAA?w=197&h=316&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+        "likes":0
+      },
+      {
+        "id": 8,
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "poster": "https://th.bing.com/th/id/OIP.rmLINW0TBgGMY_HlP5UWNAHaLH?pid=ImgDet&w=179&h=268&c=7&dpr=1.5",
+        "likes":0
+      },
+      {
+        "id": 9,
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "poster": "https://th.bing.com/th?id=OIP.rb6aTeGCgJp_H4hAi-DMCwHaL0&w=197&h=315&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
+        "likes":0
+      }
+    
+    ]
+  }
+  
