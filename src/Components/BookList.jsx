@@ -1,29 +1,48 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import BookCard from './BookCard';
-import { fetchBooks } from '../Redux/bookReducer';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import BookCard from "./BookCard";
+import { fetchBooks } from "../Redux/bookReducer";
+import { useNavigate } from "react-router-dom";
 
 const BookList = () => {
-    const dispatch = useDispatch();
- const {books,statut,erreur} = useSelector((state)=>state.books);
+  const dispatch = useDispatch();
+  const { books, statut, erreur } = useSelector((state) => state.books);
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
- useEffect(() => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/login");
+      return;
+    }
+
     dispatch(fetchBooks());
-}, [dispatch]);
-if (statut === 'loading') {
-    return <div>Loading...</div>;
-}
+  }, [dispatch, isAuthenticated, navigate]);
 
-if (statut === 'failed') {
-    return <div>Error: {erreur}</div>;
-}
+  if (statut === "loading") {
+    return <div>Chargement des livres...</div>;
+  }
+
+  if (statut === "failed") {
+    return <div>Erreur: {erreur}</div>;
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div>Veuillez vous connecter pour accéder à la liste des livres.</div>
+    );
+  }
+
   return (
-      <div className="d-flex flex-wrap justify-content-around w-75 mx-auto">
-      {books.map((book) => (
-       <BookCard key={book.id} book={book}/>
-    ))}
+    <div className="d-flex flex-wrap justify-content-around w-75 mx-auto">
+      {books.length > 0 ? (
+        books.map((book) => <BookCard key={book.id} book={book} />)
+      ) : (
+        <div>Aucun livre disponible.</div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default BookList
+export default BookList;
