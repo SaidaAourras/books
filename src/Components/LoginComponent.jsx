@@ -16,6 +16,11 @@ const Login = () => {
   });
 
   const handleLogin = async () => {
+    if (!credentials.username.trim() || !credentials.password.trim()) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+    }
+
     try {
       await dispatch(login(credentials));
     } catch (err) {
@@ -25,7 +30,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/bookList");
+      navigate("/bookList", { replace: true });
     }
   }, [isAuthenticated, navigate]);
 
@@ -101,7 +106,7 @@ const Login = () => {
           className="btn btn-block w-100"
           disabled={loading}
           style={{
-            backgroundColor: "#d29372",
+            backgroundColor: loading ? "#b27860" : "#d29372",
             color: "#fff",
             borderRadius: "25px",
             padding: "10px 20px",
@@ -109,12 +114,29 @@ const Login = () => {
             border: "none",
           }}
         >
-          {loading ? "Connexion..." : "Se connecter"}
+          {loading ? (
+            <span
+              className="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          ) : (
+            "Se connecter"
+          )}
         </button>
         {error && (
-          <p style={{ color: "red", textAlign: "center", marginTop: "10px" }}>
+          <div
+            style={{
+              backgroundColor: "#ffe6e6",
+              color: "red",
+              textAlign: "center",
+              padding: "10px",
+              marginTop: "10px",
+              borderRadius: "5px",
+            }}
+          >
             {error}
-          </p>
+          </div>
         )}
       </div>
     </div>

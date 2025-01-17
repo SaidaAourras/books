@@ -3,67 +3,22 @@
     {
       "id": "d0e1",
       "username": "bob.johnson@example.com",
-      "password": "AdminSecure456!"
-    },
-    {
-      "id": "9adc",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "2631",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "ce07",
-      "username": "admin@admin.com",
-      "password": "admin"
+      "password": "$2b$10$Ezi2ptmGnn/P.q1vQ1PBAuEBOwDHP./3xhFwHXe2kdvQJtUEVDi8W"
     },
     {
       "id": "a775",
       "username": "admin@admin.com",
-      "password": "admin"
+      "password": "$2b$10$kc0Y9lRH/OvZbD8kCt2SMupq67FJGPh3XdxWRXkaOuVGXYLS5qlLu"
     },
     {
-      "id": "2829",
-      "username": "admin@admin.com",
-      "password": "admin"
+      "id": "fd4e",
+      "username": "bob.johnson@example.com",
+      "password": "$2b$10$Ezi2ptmGnn/P.q1vQ1PBAuEBOwDHP./3xhFwHXe2kdvQJtUEVDi8W"
     },
     {
-      "id": "cec7",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "70ec",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "df81",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "0f85",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "dbb3",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "52b9",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "97ed",
-      "username": "admin@admin.com",
-      "password": "admin"
+      "id": "9a58",
+      "username": "bob.johnson@example.com",
+      "password": "AdminSecure456!"
     }
   ]
 }
