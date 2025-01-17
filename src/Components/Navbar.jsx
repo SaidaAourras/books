@@ -14,7 +14,7 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const totalItemsInCart = items.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItemsInCart = items.length;
 
   return (
     <nav

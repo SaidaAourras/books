@@ -31,7 +31,9 @@ const BookDetail = () => {
   if (!book) {
     return <div>Ce livre n'existe pas ou l'ID est incorrect.</div>;
   }
-
+ const handleAddToCart = () => {
+    dispatch(addToCart(book));
+  };
   return (
     <div className="container mt-5">
       <div className="row">
@@ -62,7 +64,7 @@ const BookDetail = () => {
               padding: "5px 15px",
               fontWeight: "bold",
             }}
-            onClick={addToCart(book)}
+            onClick={handleAddToCart}
           >
             Ajouter au panier
           </button>

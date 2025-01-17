@@ -16,9 +16,24 @@
       "password": "$2b$10$Ezi2ptmGnn/P.q1vQ1PBAuEBOwDHP./3xhFwHXe2kdvQJtUEVDi8W"
     },
     {
-      "id": "9a58",
-      "username": "bob.johnson@example.com",
-      "password": "AdminSecure456!"
+      "id": "0f85",
+      "username": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": "dbb3",
+      "username": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": "52b9",
+      "username": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": "97ed",
+      "username": "admin@admin.com",
+      "password": "admin"
     }
   ]
 }
