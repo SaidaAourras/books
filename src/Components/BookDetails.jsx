@@ -19,7 +19,7 @@ const BookDetail = () => {
   }, [dispatch, statut]);
 
   useEffect(() => {
-    const selectedBook = books.find((book) => book.id === parseInt(id));
+    const selectedBook = books.find((book) => book.id === id);
     console.log(typeof id);
     setBook(selectedBook);
   }, [id, books]);

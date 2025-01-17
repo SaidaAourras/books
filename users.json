@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "user1",
-      "password": "password123"
-    },
-    {
-      "id": "2",
-      "username": "user2",
-      "password": "pass456"
-    },
-    {
       "id": "d0e1",
       "username": "bob.johnson@example.com",
       "password": "AdminSecure456!"
@@ -51,92 +41,27 @@
       "password": "admin"
     },
     {
-      "id": "baef",
+      "id": "df81",
       "username": "admin@admin.com",
       "password": "admin"
     },
     {
-      "id": "f114",
+      "id": "0f85",
       "username": "admin@admin.com",
       "password": "admin"
     },
     {
-      "id": "32ec",
+      "id": "dbb3",
       "username": "admin@admin.com",
       "password": "admin"
     },
     {
-      "id": "eafc",
+      "id": "52b9",
       "username": "admin@admin.com",
       "password": "admin"
     },
     {
-      "id": "d9dd",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "f563",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "faf2",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "31db",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "8047",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "b823",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "0c49",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "c615",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "de1a",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "af59",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "a094",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "a549",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "b15b",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "911c",
+      "id": "97ed",
       "username": "admin@admin.com",
       "password": "admin"
     }

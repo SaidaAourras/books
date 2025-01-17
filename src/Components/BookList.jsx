@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BookCard from "./BookCard";
 import { fetchBooks } from "../Redux/bookReducer";
@@ -11,6 +11,8 @@ const BookList = () => {
 
   const navigate = useNavigate();
 
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   useEffect(() => {
     if (!isAuthenticated) {
       navigate("/login");
@@ -19,6 +21,17 @@ const BookList = () => {
 
     dispatch(fetchBooks());
   }, [dispatch, isAuthenticated, navigate]);
+
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  // filter
+
+  const filteredBooks =
+    selectedCategory === "All"
+      ? books
+      : books.filter((book) => book.category === selectedCategory);
 
   if (statut === "loading") {
     return <div>Chargement des livres...</div>;
@@ -34,13 +47,39 @@ const BookList = () => {
     );
   }
 
+  const categories = ["All", ...new Set(books.map((book) => book.category))];
+
   return (
-    <div className="d-flex flex-wrap justify-content-around w-75 mx-auto">
-      {books.length > 0 ? (
-        books.map((book) => <BookCard key={book.id} book={book} />)
-      ) : (
-        <div>Aucun livre disponible.</div>
-      )}
+    <div className="w-75 mx-auto">
+      <div className="mb-4 d-flex align-items-center">
+        <label
+          htmlFor="category-select"
+          className="form-label me-2"
+          style={{ fontWeight: "bold" }}
+        >
+          Filtrer par catégorie:
+        </label>
+        <select
+          id="category-select"
+          className="form-select w-auto"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="d-flex flex-wrap justify-content-around">
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => <BookCard key={book.id} book={book} />)
+        ) : (
+          <div>Aucun livre disponible pour cette catégorie.</div>
+        )}
+      </div>
     </div>
   );
 };

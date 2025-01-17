@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await dispatch(login(credentials)).unwrap();
+      await dispatch(login(credentials));
     } catch (err) {
       console.error("Login error:", err);
     }
