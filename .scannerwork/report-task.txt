@@ -1,0 +1,6 @@
+projectKey=books
+serverUrl=http://localhost:8080
+serverVersion=25.1.0.102122
+dashboardUrl=http://localhost:8080/dashboard?id=books
+ceTaskId=6b2f8b04-36ab-4922-85b8-dcd0809e3d2a
+ceTaskUrl=http://localhost:8080/api/ce/task?id=6b2f8b04-36ab-4922-85b8-dcd0809e3d2a

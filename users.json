@@ -34,6 +34,21 @@
       "id": "97ed",
       "username": "admin@admin.com",
       "password": "admin"
+    },
+    {
+      "id": "e2f9",
+      "username": "bob.johnson@example.com",
+      "password": "AdminSecure456!"
+    },
+    {
+      "id": "97c0",
+      "username": "bob.johnson@example.com",
+      "password": "AdminSecure456!"
+    },
+    {
+      "id": "2354",
+      "username": "bob.johnson@example.com",
+      "password": "AdminSecure456!"
     }
   ]
 }
