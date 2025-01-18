@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteBookFromDb, likeBook } from "../Redux/bookReducer";
+import {
+  deleteBookFromDb,
+  likeBook,
+  updateLikesFromDb,
+} from "../Redux/bookReducer";
 import { addToCart } from "../Redux/CartSlice";
 import { Link } from "react-router-dom";
 import { FaThumbsUp, FaShoppingCart, FaEye } from "react-icons/fa";
@@ -10,7 +14,7 @@ const BookCard = ({ book }) => {
   const dispatch = useDispatch();
 
   const handleLike = () => {
-    dispatch(likeBook(book.id));
+    dispatch(updateLikesFromDb(book));
   };
 
   const handleAddToCart = () => {
@@ -24,28 +28,35 @@ const BookCard = ({ book }) => {
     padding: "5px 15px",
     fontWeight: "bold",
   };
- const handleDeleteBook = (id) => {
+  const handleDeleteBook = (id) => {
     dispatch(deleteBookFromDb(id));
   };
   return (
     <div className="card my-3" style={{ width: "18rem" }}>
-       <button
-    className="btn btn-sm"
-    style={{
-      backgroundColor: "#b52506",
-      color: "#fff",
-      border: "none",
-      position: "absolute",
-      top: "10px",
-      right: "10px",
-      padding: "5px",
-      lineHeight: "1",
-    }}
-    onClick={() => handleDeleteBook(book.id)}
-    aria-label={`Supprimer ${book.title}`}
-  >
-   <FaXmark />
-  </button>
+      <button
+        className="btn btn-sm"
+        style={{
+          backgroundColor: "#b52506",
+          color: "#fff",
+          border: "none",
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          padding: "5px",
+          lineHeight: "1",
+        }}
+        onClick={() => {
+          const isConfirmed = window.confirm(
+            `Êtes-vous sûr de vouloir supprimer "${book.title}" ?`
+          );
+          if (isConfirmed) {
+            handleDeleteBook(book.id);
+          }
+        }}
+        aria-label={`Supprimer ${book.title}`}
+      >
+        <FaXmark />
+      </button>
       <img
         src={book.poster || "/images/placeholder.png"}
         className="card-img-top"
@@ -75,19 +86,18 @@ const BookCard = ({ book }) => {
             <FaShoppingCart style={{ marginRight: "5px" }} />
           </button>
 
-          <Link
-            to={`/book/${book.id}`}
-            style={{ textDecoration: "none" }}
-            aria-label={`Voir les détails de ${book.title}`}
+          <button
+            className="nav-link btn btn-dark rounded-pill d-flex align-items-center"
+            style={buttonStyle}
           >
-            <button
-              className="nav-link btn btn-dark rounded-pill d-flex align-items-center"
-              style={buttonStyle}
+            <Link
+              to={`/book/${book.id}`}
+              style={{ textDecoration: "none", color: "white" }}
+              aria-label={`Voir les détails de ${book.title}`}
             >
               <FaEye style={{ marginRight: "5px" }} />
-            </button>
-          </Link>
-      
+            </Link>
+          </button>
         </div>
       </div>
     </div>

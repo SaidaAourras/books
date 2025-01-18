@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addBookToDb } from "../Redux/bookReducer";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateBookFromDb } from "../Redux/bookReducer";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddBook = () => {
+const EditBook = () => {
+  const { books } = useSelector((state) => state.books);
+  const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -13,27 +15,42 @@ const AddBook = () => {
     price: "",
     poster: "",
     category: "",
-    likes: 0, // Initialisation correcte
+    likes: 0,
   });
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    const selectedBook = books.find((book) => book.id === id);
+    if (selectedBook) {
+      setFormData({
+        title: selectedBook.title || "",
+        author: selectedBook.author || "",
+        price: selectedBook.price || "",
+        poster: selectedBook.poster || "",
+        category: selectedBook.category || "",
+        likes: selectedBook.likes || 0,
+      });
+    }
+  }, [id, books]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: name === "price" ? parseFloat(value) || "" : value,
+    });
   };
 
   const validate = () => {
     const newErrors = {};
     if (!formData.title) newErrors.title = "Le titre est obligatoire.";
     if (!formData.author) newErrors.author = "L'auteur est obligatoire.";
-    if (
-      !formData.price ||
-      isNaN(formData.price) ||
-      parseFloat(formData.price) <= 0
-    ) {
+    if (!formData.price || isNaN(formData.price) || formData.price <= 0) {
       newErrors.price = "Le prix doit être un nombre positif.";
     }
-    if (!formData.poster) newErrors.poster = "L'image est obligatoire.";
+    if (!formData.poster || !formData.poster.startsWith("http")) {
+      newErrors.poster = "L'image doit être une URL valide.";
+    }
     if (!formData.category)
       newErrors.category = "La catégorie est obligatoire.";
     setErrors(newErrors);
@@ -44,15 +61,14 @@ const AddBook = () => {
     e.preventDefault();
     if (!validate()) return;
 
-    console.log("Données envoyées :", formData);
-
-    dispatch(addBookToDb(formData));
+    const updatedBook = { ...formData, id };
+    dispatch(updateBookFromDb(updatedBook));
     navigate("/bookList");
   };
 
   return (
     <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-      <h1>Ajouter un Livre</h1>
+      <h1>Modifier un Livre</h1>
       <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
         <div className="mb-3">
           <label className="form-label">Titre</label>
@@ -81,6 +97,7 @@ const AddBook = () => {
             <div className="invalid-feedback">{errors.author}</div>
           )}
         </div>
+
         <div className="mb-3">
           <label className="form-label">Prix</label>
           <input
@@ -129,6 +146,7 @@ const AddBook = () => {
             <div className="invalid-feedback">{errors.category}</div>
           )}
         </div>
+
         <button
           type="submit"
           style={{
@@ -139,11 +157,11 @@ const AddBook = () => {
             fontWeight: "bold",
           }}
         >
-          Ajouter
+          Sauvegarder
         </button>
       </form>
     </div>
   );
 };
 
-export default AddBook;
+export default EditBook;

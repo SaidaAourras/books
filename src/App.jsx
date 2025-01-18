@@ -13,6 +13,7 @@ import Cart from "./Components/Cart";
 import BookDetail from "./Components/BookDetails";
 import Navbar from "./Components/Navbar";
 import AddBook from "./Components/AddBook";
+import EditBook from "./Components/EditBook";
 
 function App() {
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
@@ -34,7 +35,7 @@ function App() {
           path="/cart"
           element={isAuthenticated ? <Cart /> : <Navigate to="/login" />}
         />
-
+        <Route path="/editBook/:id" element={<EditBook />} />
         <Route path="/book/:id" element={<BookDetail />} />
         <Route path="/add-book" element={<AddBook />} />
         <Route

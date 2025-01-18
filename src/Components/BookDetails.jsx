@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBooks } from "../Redux/bookReducer";
-import { addToCart } from "../Redux/CartSlice";
+import { fetchBooks, updateBook } from "../Redux/bookReducer";
 
 const BookDetail = () => {
   const { id } = useParams();
@@ -31,8 +30,8 @@ const BookDetail = () => {
   if (!book) {
     return <div>Ce livre n'existe pas ou l'ID est incorrect.</div>;
   }
- const handleAddToCart = () => {
-    dispatch(addToCart(book));
+  const handleEdit = (book) => {
+    navigate(`/editBook/${book.id}`);
   };
   return (
     <div className="container mt-5">
@@ -64,9 +63,9 @@ const BookDetail = () => {
               padding: "5px 15px",
               fontWeight: "bold",
             }}
-            onClick={handleAddToCart}
+            onClick={() => handleEdit(book)}
           >
-            Ajouter au panier
+            Editer Book
           </button>
         </div>
       </div>

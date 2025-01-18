@@ -16,38 +16,23 @@
       "password": "$2b$10$Ezi2ptmGnn/P.q1vQ1PBAuEBOwDHP./3xhFwHXe2kdvQJtUEVDi8W"
     },
     {
-      "id": "0f85",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "dbb3",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "52b9",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "97ed",
-      "username": "admin@admin.com",
-      "password": "admin"
-    },
-    {
-      "id": "e2f9",
+      "id": "",
       "username": "bob.johnson@example.com",
       "password": "AdminSecure456!"
     },
     {
-      "id": "97c0",
+      "id": "ef97",
       "username": "bob.johnson@example.com",
       "password": "AdminSecure456!"
     },
     {
-      "id": "2354",
+      "id": "8371",
       "username": "bob.johnson@example.com",
+      "password": "AdminSecure456!"
+    },
+    {
+      "id": "79d0",
+      "username": "saida@saida.com",
       "password": "AdminSecure456!"
     }
   ]

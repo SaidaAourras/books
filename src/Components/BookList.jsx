@@ -4,7 +4,6 @@ import BookCard from "./BookCard";
 import { fetchBooks } from "../Redux/bookReducer";
 import { useNavigate } from "react-router-dom";
 
-
 const BookList = () => {
   const dispatch = useDispatch();
   const { books, statut, erreur } = useSelector((state) => state.books);
@@ -26,7 +25,6 @@ const BookList = () => {
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
   };
-
 
   // filter
 
@@ -67,25 +65,25 @@ const BookList = () => {
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
-          {categories.map((category,index) => (
+          {categories.map((category, index) => (
             <option key={index} value={category}>
               {category}
             </option>
           ))}
         </select>
         <button
-                className="nav-link btn btn-dark mx-2"
-                style={{
-                  backgroundColor: "#f5c6a5",
-                  color: "#c6564b",
-                  border: "none",
-                  padding: "5px 15px",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                }}
-                onClick={() => navigate("/add-book")}
-              >
-                Ajouter livre
+          className="nav-link btn btn-dark mx-2"
+          style={{
+            backgroundColor: "#f5c6a5",
+            color: "#c6564b",
+            border: "none",
+            padding: "5px 15px",
+            fontWeight: "bold",
+            textDecoration: "none",
+          }}
+          onClick={() => navigate("/add-book")}
+        >
+          Ajouter livre
         </button>
       </div>
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../Redux/AuthSlice";
+import { login, register, toggleMode } from "../Redux/AuthSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error, isAuthenticated } = useSelector(
+  const { loading, error, isAuthenticated, mode } = useSelector(
     (state) => state.auth
   );
 
@@ -22,9 +22,24 @@ const Login = () => {
     }
 
     try {
+      // Essayer de se connecter
       await dispatch(login(credentials));
     } catch (err) {
-      console.error("Login error:", err);
+      console.error("Erreur de connexion:", err);
+    }
+  };
+
+  const handleRegister = async () => {
+    if (!credentials.username.trim() || !credentials.password.trim()) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+    }
+
+    try {
+      // Essayer de s'inscrire
+      await dispatch(register(credentials));
+    } catch (err) {
+      console.error("Erreur d'inscription:", err);
     }
   };
 
@@ -51,7 +66,7 @@ const Login = () => {
         }}
       >
         <h2 className="text-center" style={{ color: "#c6564b" }}>
-          Se connecter
+          {mode === "login" ? "Se connecter" : "S'inscrire"}
         </h2>
         <div className="mb-3">
           <label
@@ -102,7 +117,7 @@ const Login = () => {
           />
         </div>
         <button
-          onClick={handleLogin}
+          onClick={mode === "login" ? handleLogin : handleRegister}
           className="btn btn-block w-100"
           disabled={loading}
           style={{
@@ -120,8 +135,10 @@ const Login = () => {
               role="status"
               aria-hidden="true"
             ></span>
-          ) : (
+          ) : mode === "login" ? (
             "Se connecter"
+          ) : (
+            "S'inscrire"
           )}
         </button>
         {error && (
@@ -138,6 +155,18 @@ const Login = () => {
             {error}
           </div>
         )}
+        <div className="text-center mt-3">
+          <span style={{ fontSize: "14px" }}>
+            {mode === "login" ? "Pas de compte ? " : "Déjà un compte ? "}
+            <a
+              href="#"
+              onClick={() => dispatch(toggleMode())}
+              style={{ color: "#d29372", fontWeight: "bold" }}
+            >
+              {mode === "login" ? "Créer un compte" : "Se connecter"}
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );
