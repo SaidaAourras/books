@@ -65,10 +65,28 @@ const Cart = () => {
           <button
             className="btn btn-primary mr-2"
             onClick={() => navigate("/checkout")}
+            style={{
+              backgroundColor: "#b52506",
+              color: "#fff",
+              border: "none",
+              padding: "5px 15px",
+              fontWeight: "bold",
+              transition: "all 0.3s ease"
+            }}
           >
             Passer à la caisse
           </button>
-          <button className="btn btn-secondary" onClick={handleClearCart}>
+          <button className="btn btn-secondary m-2"
+                  onClick={handleClearCart}
+                  style={{
+                    backgroundColor: "#e8553a",
+                    color: "#fff",
+                    border: "none",
+                    padding: "5px 15px",
+                    fontWeight: "bold",
+                    transition: "all 0.3s ease"
+                  }}
+                  >
             Vider le panier
           </button>
         </div>

@@ -4,6 +4,7 @@ import BookCard from "./BookCard";
 import { fetchBooks } from "../Redux/bookReducer";
 import { useNavigate } from "react-router-dom";
 
+
 const BookList = () => {
   const dispatch = useDispatch();
   const { books, statut, erreur } = useSelector((state) => state.books);
@@ -25,6 +26,7 @@ const BookList = () => {
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
   };
+
 
   // filter
 
@@ -51,7 +53,7 @@ const BookList = () => {
 
   return (
     <div className="w-75 mx-auto">
-      <div className="mb-4 d-flex align-items-center">
+      <div className="mb-4 d-flex align-items-center mt-2">
         <label
           htmlFor="category-select"
           className="form-label me-2"
@@ -65,12 +67,26 @@ const BookList = () => {
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
-          {categories.map((category) => (
-            <option key={category} value={category}>
+          {categories.map((category,index) => (
+            <option key={index} value={category}>
               {category}
             </option>
           ))}
         </select>
+        <button
+                className="nav-link btn btn-dark mx-2"
+                style={{
+                  backgroundColor: "#f5c6a5",
+                  color: "#c6564b",
+                  border: "none",
+                  padding: "5px 15px",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                }}
+                onClick={() => navigate("/add-book")}
+              >
+                Ajouter livre
+        </button>
       </div>
 
       <div className="d-flex flex-wrap justify-content-around">
