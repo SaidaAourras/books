@@ -84,18 +84,6 @@ const BooksReducer = createSlice({
         book.likes += 1;
       }
     },
-    addBook: (state, action) => {
-      state.books.push(action.payload);
-    },
-    updateBook: (state, action) => {
-      const index = state.books.findIndex((b) => b.id === action.payload.id);
-      if (index >= 0) {
-        state.books[index] = action.payload;
-      }
-    },
-    deleteBook: (state, action) => {
-      state.books = state.books.filter((b) => b.id !== action.payload);
-    },
   },
   extraReducers: (builder) => {
     builder

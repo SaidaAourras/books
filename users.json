@@ -14,26 +14,6 @@
       "id": "fd4e",
       "username": "bob.johnson@example.com",
       "password": "$2b$10$Ezi2ptmGnn/P.q1vQ1PBAuEBOwDHP./3xhFwHXe2kdvQJtUEVDi8W"
-    },
-    {
-      "id": "",
-      "username": "bob.johnson@example.com",
-      "password": "AdminSecure456!"
-    },
-    {
-      "id": "ef97",
-      "username": "bob.johnson@example.com",
-      "password": "AdminSecure456!"
-    },
-    {
-      "id": "8371",
-      "username": "bob.johnson@example.com",
-      "password": "AdminSecure456!"
-    },
-    {
-      "id": "79d0",
-      "username": "saida@saida.com",
-      "password": "AdminSecure456!"
     }
   ]
 }

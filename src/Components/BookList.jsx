@@ -22,6 +22,7 @@ const BookList = () => {
     dispatch(fetchBooks());
   }, [dispatch, isAuthenticated, navigate]);
 
+
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
   };

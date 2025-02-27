@@ -18,7 +18,8 @@
     "plugins": ["react", "redux"],
     "rules": {
       "react/prop-types": "off",
-      "redux/no-unused-actions": "warn"
+      "redux/no-unused-actions": "warn",
+      "react/react-in-jsx-scope":"off"
     }
   }
   

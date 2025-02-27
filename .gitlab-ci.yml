@@ -1,0 +1,51 @@
+image: node:16
+
+cache:
+  paths:
+    - node_modules/
+stages:
+  - install
+  - lint
+  - test
+  - build
+  - deploy
+
+install:
+  stage: install
+  script:
+    - npm install
+  cache:
+    paths:
+      - node_modules/
+lint:
+  stage: lint
+  script:
+    - npx eslint src/
+  allow_failures: true
+
+test:
+  stage: test
+  script:
+    - npm test -- --watchAll=false
+  artifacts:
+    when: always
+    path:
+      - test-results/
+    expire_in: 1 week
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
+
+deploy:
+  stage: deploy
+  script:
+    - echo "deploying to the production server..."
+    - scp -r build/* user@server:/var/ww/books
+  only:
+    - main

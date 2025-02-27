@@ -5,14 +5,14 @@
       "title": "War and Peace",
       "author": "Leo Tolstoy",
       "poster": "https://th.bing.com/th/id/OIP.rmLINW0TBgGMY_HlP5UWNAHaLH?pid=ImgDet&w=179&h=268&c=7&dpr=1.5",
-      "likes": 1,
+      "likes": 3,
       "price": 20,
       "category": "Historical Fiction"
     },
     {
       "title": "Crime and Punishment",
       "author": "Fyodor Dostoev",
-      "price": 16,
+      "price": 20,
       "poster": "https://th.bing.com/th?id=OIP.rb6aTeGCgJp_H4hAi-DMCwHaL0&w=197&h=315&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
       "category": "Classic Literature",
       "likes": 3,
@@ -28,13 +28,13 @@
       "category": "Fiction"
     },
     {
-      "id": "2",
       "title": "1984",
       "author": "George Orwell",
+      "price": 12.9,
       "poster": "https://th.bing.com/th?id=OIP.0lhZw7B4IUdvekIJNPpMDwHaLF&w=204&h=305&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
-      "likes": 0,
-      "price": 12.99,
-      "category": "Dystopian"
+      "category": "Dystopian",
+      "likes": 4,
+      "id": "2"
     },
     {
       "id": "3",
@@ -64,12 +64,12 @@
       "category": "Adventure"
     },
     {
-      "id": "a1a3",
-      "title": "antigone",
-      "author": "jean paul sarter",
-      "price": 8888,
-      "poster": "https://th.bing.com/th?id=OIP.0lhZw7B4IUdvekIJNPpMDwHaLF&w=204&h=305&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
-      "category": "Historical Fiction",
+      "id": "3718",
+      "title": "proj2",
+      "author": "Fyodor Dostoev",
+      "price": "20",
+      "poster": "https://th.bing.com/th?id=OIP.rb6aTeGCgJp_H4hAi-DMCwHaL0&w=197&h=315&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2",
+      "category": "Classic Literature",
       "likes": 0
     }
   ]
